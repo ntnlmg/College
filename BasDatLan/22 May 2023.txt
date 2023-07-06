@@ -1,0 +1,223 @@
+CREATE OR REPLACE PROCEDURE print_hello IS
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('HELLO WORLD');
+END;
+/
+
+BEGIN
+ print_hello;
+END;
+/
+
+CREATE OR REPLACE FUNCTION print_hello2 RETURN VARCHAR2 IS
+BEGIN
+  RETURN 'HELLO WORLD';
+END;
+/
+
+DECLARE
+  pesan VARCHAR2(20);
+BEGIN
+  pesan := print_hello2();
+  DBMS_OUTPUT.PUT_LINE(pesan);
+END;
+/
+
+CREATE OR REPLACE FUNCTION print_hello3 RETURN NUMBER IS
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('HELLO WORLD');
+  RETURN 1;
+END;
+/
+
+DECLARE
+  pesan VARCHAR2(20);
+  inte NUMBER;
+BEGIN
+  inte := print_hello3();
+  DBMS_OUTPUT.PUT_LINE(inte);
+END;
+/
+
+CREATE OR REPLACE PROCEDURE add_n (param1 IN NUMBER, param2 IN NUMBER, result OUT NUMBER) AS
+BEGIN
+  result := param1 + param2;
+END;
+/
+
+DECLARE
+  result_num NUMBER;
+BEGIN
+  add_n(5, 3, result_num);
+  DBMS_OUTPUT.PUT_LINE('Hasil penambahan: ' || result_num);
+END;
+/
+
+CREATE OR REPLACE FUNCTION add_n2 (param1 IN NUMBER, param2 IN NUMBER) RETURN NUMBER IS
+  result NUMBER;
+BEGIN
+  result := param1 + param2;
+  RETURN result;
+END;
+/
+
+DECLARE
+  result NUMBER;
+BEGIN
+  result := add_n2(5, 3);
+  DBMS_OUTPUT.PUT_LINE('Hasil penambahan: ' || result);
+END;
+/
+
+CREATE OR REPLACE PROCEDURE get_employees AS
+BEGIN
+  FOR record IN (SELECT * FROM EMPLOYEES)
+  LOOP 
+    DBMS_OUTPUT.PUT_LINE(record.employee_id || ' ' || record.first_name || ' ' ||record.last_name);
+  END LOOP;
+END;
+/
+
+BEGIN
+  get_employees;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE get_employees2(e_id IN NUMBER) AS
+BEGIN
+  FOR record IN (SELECT * FROM EMPLOYEES WHERE employee_id = e_id)
+  LOOP 
+    DBMS_OUTPUT.PUT_LINE(record.employee_id || ' ' || record.first_name || ' ' ||record.last_name);
+  END LOOP;
+END;
+/
+
+BEGIN
+  get_employees2(100);
+END;
+/
+
+
+CREATE OR REPLACE FUNCTION get_department RETURN SYS_REFCURSOR AS
+  new_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN new_cursor FOR SELECT department_id, department_name FROM Departments;
+  RETURN new_cursor;
+END;
+/
+
+DECLARE
+  res SYS_REFCURSOR;
+  d_id NUMBER;
+  d_name VARCHAR2(40);
+BEGIN
+  res := get_department;
+  
+  LOOP
+    FETCH res INTO d_id, d_name;
+    EXIT WHEN res%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Department ID: ' || d_id || ', Department Name: ' || d_name);
+  END LOOP;
+  
+  CLOSE res;
+END;
+/
+
+CREATE OR REPLACE FUNCTION get_department RETURN SYS_REFCURSOR AS
+  new_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN new_cursor FOR SELECT * FROM Departments;
+  RETURN new_cursor;
+END;
+/
+
+DECLARE
+  res SYS_REFCURSOR;
+  d_id NUMBER;
+  d_name VARCHAR2(40);
+  m_id NUMBER;
+  l_id NUMBER;
+BEGIN
+  res := get_department;
+  
+  LOOP
+    FETCH res INTO d_id, d_name, m_id, l_id;
+    EXIT WHEN res%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Department ID: ' || d_id || ', Department Name: ' || d_name || ', Manager ID: ' || m_id || ', Location ID: ' || l_id);
+  END LOOP;
+  
+  CLOSE res;
+END;
+/
+
+CREATE OR REPLACE PACKAGE dept_pack IS
+  FUNCTION get_department RETURN SYS_REFCURSOR;
+END dept_pack;
+/
+
+CREATE OR REPLACE PACKAGE BODY dept_pack IS
+  FUNCTION get_department RETURN SYS_REFCURSOR AS
+  new_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN new_cursor FOR SELECT department_id, department_name FROM Departments;
+  RETURN new_cursor;
+END get_department;
+END dept_pack;
+/
+
+DECLARE
+  res SYS_REFCURSOR;
+  d_id NUMBER;
+  d_name VARCHAR2(40);
+BEGIN
+  res := dept_pack.get_department;
+  
+  LOOP
+    FETCH res INTO d_id, d_name;
+    EXIT WHEN res%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Department ID: ' || d_id || ', Department Name: ' || d_name);
+  END LOOP;
+  
+  CLOSE res;
+END;
+/
+
+SELECT d.department_id, d.department_name, e.first_name, e.last_name
+FROM Departments d
+JOIN Employees e ON d.Manager_ID = e.Employee_ID;
+/
+
+CREATE OR REPLACE FUNCTION get_department_manager RETURN SYS_REFCURSOR AS
+  new_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN new_cursor FOR
+    SELECT d.department_id, d.department_name, e.first_name, e.last_name
+    FROM Departments d
+    JOIN Employees e ON d.Manager_ID = e.Employee_ID;
+  
+  RETURN new_cursor;
+/
+END;
+
+DECLARE
+  res SYS_REFCURSOR;
+  dept_id NUMBER;
+  dept_name VARCHAR2(100);
+  manager_fname VARCHAR2(100);
+  manager_lname VARCHAR2(100);
+BEGIN
+  res := get_department_manager;
+  
+  LOOP
+    FETCH res INTO dept_id, dept_name, manager_fname, manager_lname;
+    EXIT WHEN res%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Department ID: ' || dept_id || ', Department Name: ' || dept_name || ', Manager Name: ' || manager_fname || ' ' || manager_lname);
+  END LOOP;
+  
+  CLOSE res;
+END;
+/

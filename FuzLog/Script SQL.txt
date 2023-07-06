@@ -1,0 +1,104 @@
+SELECT ID, Produk, Persediaan, 
+       (300 - Persediaan) / 200 AS sedikit,
+       (Persediaan - 100) / 200 AS banyak
+FROM emdia;
+
+SELECT ID, Produk, Permintaan, 
+       (500 - Permintaan) / 400 AS sedikit,
+       (Permintaan - 100) / 400 AS banyak
+FROM emdia;
+
+SELECT ID, Produk, Harga_Produksi, 
+       (1000 - Harga_Produksi) / 400 AS murah,
+       (Harga_Produksi - 600) / 400 AS mahal
+FROM emdia;
+
+#Berdasarkan Rule:
+
+#Rule 1
+SELECT e.ID, e.Produk, 
+	pd.sedikit AS Persediaan_Sedikit, 
+	pm.sedikit AS Permintaan_Sedikit, 
+	hp.murah AS Harga_Produksi_Murah, 
+	2000 -(LEAST(pd.sedikit, pm.sedikit, hp.murah)*1000) AS Harga_Jual_Murah
+FROM emdia e
+JOIN Persediaan pd ON e.ID = pd.ID
+JOIN Permintaan pm ON pd.ID = pm.ID
+JOIN Harga_Produksi hp ON pm.ID = hp.ID;
+
+#Rule 2
+SELECT e.ID, e.Produk, 
+	pd.sedikit AS Persediaan_Sedikit, 
+	pm.banyak AS Permintaan_Banyak, 
+	hp.murah AS Harga_Produksi_Murah, 
+	(LEAST(pd.sedikit, pm.banyak, hp.murah) * 1000) + 1000 AS Harga_Jual_Mahal
+FROM emdia e
+JOIN Persediaan pd ON e.ID = pd.ID
+JOIN Permintaan pm ON pd.ID = pm.ID
+JOIN Harga_Produksi hp ON pm.ID = hp.ID;
+
+#Rule 3
+SELECT e.ID, e.Produk, 
+	pd.banyak AS Persediaan_Banyak, 
+	pm.sedikit AS Permintaan_Sedikit, 
+	hp.murah AS Harga_Produksi_Murah, 
+	2000 -(LEAST(pd.banyak, pm.sedikit, hp.murah)*1000) AS Harga_Jual_Murah
+FROM emdia e
+JOIN Persediaan pd ON e.ID = pd.ID
+JOIN Permintaan pm ON pd.ID = pm.ID
+JOIN Harga_Produksi hp ON pm.ID = hp.ID;
+
+#Rule 4
+SELECT e.ID, e.Produk, 
+	pd.banyak AS Persediaan_Banyak, 
+	pm.banyak AS Permintaan_Banyak,  
+	hp.murah AS Harga_Produksi_Murah, 
+	(LEAST(pd.banyak, pm.banyak, hp.murah) * 1000) + 1000 AS Harga_Jual_Mahal
+FROM emdia e
+JOIN Persediaan pd ON e.ID = pd.ID
+JOIN Permintaan pm ON pd.ID = pm.ID
+JOIN Harga_Produksi hp ON pm.ID = hp.ID;
+
+#Rule 5
+SELECT e.ID, e.Produk, 
+	pd.sedikit AS Persediaan_Sedikit, 
+	pm.sedikit AS Permintaan_Sedikit, 
+	hp.mahal AS Harga_Produksi_Mahal, 
+	2000 -(LEAST(pd.sedikit, pm.sedikit, hp.mahal)*1000) AS Harga_Jual_Murah
+FROM emdia e
+JOIN Persediaan pd ON e.ID = pd.ID
+JOIN Permintaan pm ON pd.ID = pm.ID
+JOIN Harga_Produksi hp ON pm.ID = hp.ID;
+
+#Rule 6
+SELECT e.ID, e.Produk, 
+	pd.sedikit AS Persediaan_Sedikit, 
+	pm.banyak AS Permintaan_Banyak, 
+	hp.mahal AS Harga_Produksi_Mahal,
+	(LEAST(pd.sedikit, pm.banyak, hp.mahal) * 1000) + 1000 AS Harga_Jual_Mahal
+FROM emdia e
+JOIN Persediaan pd ON e.ID = pd.ID
+JOIN Permintaan pm ON pd.ID = pm.ID
+JOIN Harga_Produksi hp ON pm.ID = hp.ID;
+
+#Rule 7
+SELECT e.ID, e.Produk, 
+	pd.banyak AS Persediaan_Banyak, 
+	pm.sedikit AS Permintaan_Sedikit, 
+	hp.mahal AS Harga_Produksi_Mahal,
+	(LEAST(pd.banyak, pm.sedikit, hp.mahal) * 1000) + 1000 AS Harga_Jual_Mahal
+FROM emdia e
+JOIN Persediaan pd ON e.ID = pd.ID
+JOIN Permintaan pm ON pd.ID = pm.ID
+JOIN Harga_Produksi hp ON pm.ID = hp.ID;
+
+#Rule 8
+SELECT e.ID, e.Produk, 
+	pd.banyak AS Persediaan_Banyak, 
+	pm.banyak AS Permintaan_Banyak,  
+	hp.mahal AS Harga_Produksi_Mahal, 
+	(LEAST(pd.banyak, pm.banyak, hp.mahal) * 1000) + 1000 AS Harga_Jual_Mahal
+FROM emdia e
+JOIN Persediaan pd ON e.ID = pd.ID
+JOIN Permintaan pm ON pd.ID = pm.ID
+JOIN Harga_Produksi hp ON pm.ID = hp.ID;
