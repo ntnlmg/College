@@ -1,0 +1,431 @@
+1. GET ALL EMPLOYEES
+
+===================PROCEDURE=====================
+CREATE OR REPLACE PROCEDURE get_all_employee AS
+BEGIN
+  FOR rec IN (SELECT e.employee_id, e.first_name, e.last_name, j.job_title
+              FROM Employees e
+              JOIN Jobs j ON e.job_id = j.job_id)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || rec.employee_id || ' ' || ',Employee Name: ' || rec.first_name || ' ' || rec.last_name || ' ' || ',Job Title: ' || rec.job_title);
+  END LOOP;
+END;
+/
+
+BEGIN
+ get_all_employee();
+END;
+/
+
+===================FUNCTION=====================
+
+CREATE OR REPLACE FUNCTION get_all_employees RETURN SYS_REFCURSOR AS
+  new_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN new_cursor FOR
+    SELECT e.employee_id, e.first_name, e.last_name, j.job_title
+    FROM Employees e
+    JOIN Jobs j ON e.job_id = j.job_id;
+  RETURN new_cursor;
+END;
+/
+
+DECLARE
+  res SYS_REFCURSOR;
+  emp_id NUMBER;
+  empf VARCHAR2(40);
+  empl VARCHAR2(40);
+  jt VARCHAR2(40);
+BEGIN
+  res := get_all_employees;
+  
+  LOOP
+    FETCH res INTO emp_id, empf, empl, jt;
+    EXIT WHEN res%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_id || ', Employee Name: ' || empf || ' ' || empl || ' ' || ', Job Title: ' || jt);
+  END LOOP;
+  
+  CLOSE res;
+END;
+/
+
+
+2. GET ALL PROGRAMMER
+
+===================PROCEDURE=====================
+
+CREATE OR REPLACE PROCEDURE get_all_programmer AS
+BEGIN
+  FOR rec IN (SELECT e.employee_id, e.first_name, e.last_name, j.job_title FROM Employees e
+              JOIN Jobs j ON e.job_id = j.job_id 
+              WHERE j.job_title = 'Programmer')
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || rec.employee_id || ' ' || ', Employee Name: ' || rec.first_name || ' ' || rec.last_name || ' ' || ', Job Title: ' || rec.job_title);
+  END LOOP;
+END;
+/
+
+BEGIN
+ get_all_programmer();
+END;
+/
+
+===================FUNCTION=====================
+
+CREATE OR REPLACE FUNCTION get_all_programmers RETURN SYS_REFCURSOR AS
+  new_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN new_cursor FOR
+    SELECT e.employee_id, e.first_name, e.last_name, j.job_title FROM Employees e
+    JOIN Jobs j ON e.job_id = j.job_id 
+    WHERE j.job_title = 'Programmer';
+  RETURN new_cursor;
+END;
+/
+
+DECLARE
+  res SYS_REFCURSOR;
+  emp_id NUMBER;
+  empf VARCHAR2(40);
+  empl VARCHAR2(40);
+  jt VARCHAR2(40);
+BEGIN
+  res := get_all_programmers;
+  
+  LOOP
+    FETCH res INTO emp_id, empf, empl, jt;
+    EXIT WHEN res%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_id || ', Employee Name: ' || empf || ' ' || empl || ' ' || ', Job Title: ' || jt);
+  END LOOP;
+  
+  CLOSE res;
+END;
+/
+
+3. CLUSTER EMPLOYEES
+
+===================PROCEDURE=====================
+
+CREATE OR REPLACE PROCEDURE cluster_employee AS
+BEGIN
+  FOR rec IN (SELECT j.job_id, j.job_title, COUNT(e.employee_id) AS count_employees, j.min_salary, j.max_salary
+              FROM Jobs j
+              LEFT JOIN Employees e ON j.job_id = e.job_id
+              GROUP BY j.job_id, j.job_title, j.min_salary, j.max_salary)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('Job ID: ' || rec.job_id || ', Job Title: ' || rec.job_title || ', Employee Count: ' || rec.count_employees || ', Wage Range: ' || rec.min_salary || '-' || rec.max_salary);
+  END LOOP;
+END;
+/
+
+BEGIN
+  cluster_employee();
+END;
+/
+
+===================FUNCTION=====================
+
+CREATE OR REPLACE FUNCTION cluster_employees RETURN SYS_REFCURSOR AS new_cursor SYS_REFCURSOR;
+BEGIN 
+  OPEN new_cursor FOR
+    SELECT j.job_id, j.job_title, COUNT(e.employee_id) AS count_employees, j.min_salary, j.max_salary FROM Jobs j
+    LEFT JOIN Employees e ON j.job_id = e.job_id
+    GROUP BY j.job_id, j.job_title, j.min_salary, j.max_salary;
+  Return new_cursor;
+END;
+/
+
+DECLARE
+  result_cursor SYS_REFCURSOR;
+  job_id VARCHAR(40);
+  job_title VARCHAR(40);
+  count_employees NUMBER;
+  min_salary VARCHAR(40);
+  max_salary VARCHAR(40);
+BEGIN
+  result_cursor := cluster_employees;
+
+  LOOP
+    FETCH result_cursor INTO job_id, job_title, count_employees, min_salary, max_salary;
+    EXIT WHEN result_cursor%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Job ID: ' || job_id || ', Job Title: ' || job_title || ', Employee Count: ' || count_employees || ', Salary Range: ' || min_salary || '-' || max_salary);
+  END LOOP;
+
+  CLOSE result_cursor;
+END;
+/
+
+4. GET ALL MANAGERS
+
+===================PROCEDURE=====================
+CREATE OR REPLACE PROCEDURE get_all_managers AS
+BEGIN
+  FOR rec IN (SELECT e.employee_id, e.first_name, e.last_name, j.job_title FROM Employees e
+              JOIN Jobs j ON e.job_id = j.job_id 
+              WHERE JOB_TITLE LIKE '%Manager')
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || rec.employee_id || ' ' || ', Employee Name: ' || rec.first_name || ' ' || rec.last_name || ' ' || ', Job Title: ' || rec.job_title);
+  END LOOP;
+END;
+/ 
+
+BEGIN
+ get_all_managers();
+END;
+/
+
+===================FUNCTION=====================
+
+CREATE OR REPLACE FUNCTION get_all_managerss RETURN SYS_REFCURSOR AS
+  new_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN new_cursor FOR
+    SELECT e.employee_id, e.first_name, e.last_name, j.job_title
+    FROM Employees e
+    JOIN Jobs j ON e.job_id = j.job_id
+    WHERE j.job_title LIKE '%Manager';
+  
+  RETURN new_cursor;
+END;
+/
+
+DECLARE
+  result_cursor SYS_REFCURSOR;
+  employee_id NUMBER;
+  first_name VARCHAR2(40);
+  last_name VARCHAR2(40);
+  job_title VARCHAR2(40);
+BEGIN
+  result_cursor := get_all_managerss;
+
+  LOOP
+    FETCH result_cursor INTO employee_id, first_name, last_name, job_title;
+    EXIT WHEN result_cursor%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || employee_id || ', Employee Name: ' || first_name || ' ' || last_name || ', Job Title: ' || job_title);
+  END LOOP;
+
+  CLOSE result_cursor;
+END;
+/
+
+
+5. GET MANAGER WITH INPUT
+
+===================PROCEDURE=====================
+CREATE OR REPLACE PROCEDURE get_manager(id IN NUMBER) AS
+BEGIN
+  FOR rec IN (SELECT e.employee_id, e.first_name, e.last_name, e.manager_id FROM Employees e
+              WHERE e.manager_id = id AND e.employee_id <> id)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || rec.employee_id || ', Employee Name: ' || rec.first_name || ' ' || rec.last_name || ', Manager ID: ' || rec.manager_id );
+  END LOOP;
+END;
+/
+
+
+BEGIN
+ get_manager(100);
+END;
+/
+
+===================FUNCTION=====================
+CREATE OR REPLACE FUNCTION get_managerr(id IN NUMBER) RETURN SYS_REFCURSOR AS
+  result_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN result_cursor FOR
+    SELECT e.employee_id, e.first_name, e.last_name, e.manager_id
+    FROM Employees e
+    WHERE e.manager_id = id AND e.employee_id <> id;
+  
+  RETURN result_cursor;
+END;
+/
+
+DECLARE
+  result_cursor SYS_REFCURSOR;
+  employee_id NUMBER;
+  first_name VARCHAR2(40);
+  last_name VARCHAR2(40);
+  manager_id NUMBER;
+BEGIN
+  result_cursor := get_managerr(100);
+
+  LOOP
+    FETCH result_cursor INTO employee_id, first_name, last_name, manager_id;
+    EXIT WHEN result_cursor%NOTFOUND;
+
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || employee_id || ', Employee Name: ' || first_name || ' ' || last_name || ', Manager ID: ' || manager_id);
+  END LOOP;
+
+  CLOSE result_cursor;
+END;
+/
+
+6. Simpan semuanya kedalam PACKAGE
+
+CREATE OR REPLACE PACKAGE package_employee_addons AS
+
+  PROCEDURE get_all_employee;
+  FUNCTION get_all_employees RETURN SYS_REFCURSOR;
+  
+  PROCEDURE get_all_programmer;
+  FUNCTION get_all_programmers RETURN SYS_REFCURSOR;
+  
+  PROCEDURE cluster_employee;
+  FUNCTION cluster_employees RETURN SYS_REFCURSOR;
+  
+  PROCEDURE get_all_managers;
+  FUNCTION get_all_managerss RETURN SYS_REFCURSOR;
+  
+  PROCEDURE get_manager(id IN NUMBER);
+  FUNCTION get_managerr(id IN NUMBER) RETURN SYS_REFCURSOR;
+  
+END package_employee_addons;
+/
+
+CREATE OR REPLACE PACKAGE BODY package_employee_addons AS
+  PROCEDURE get_all_employee AS
+  BEGIN
+    FOR rec IN (SELECT e.employee_id, e.first_name, e.last_name, j.job_title
+                FROM Employees e
+                JOIN Jobs j ON e.job_id = j.job_id)
+    LOOP
+      DBMS_OUTPUT.PUT_LINE('Employee ID: ' || rec.employee_id || ', Employee Name: ' || rec.first_name || ' ' || rec.last_name || ', Job Title: ' || rec.job_title);
+    END LOOP;
+  END get_all_employee;
+
+  FUNCTION get_all_employees RETURN SYS_REFCURSOR AS
+    new_cursor SYS_REFCURSOR;
+  BEGIN
+    OPEN new_cursor FOR
+      SELECT e.employee_id, e.first_name, e.last_name, j.job_title
+      FROM Employees e
+      JOIN Jobs j ON e.job_id = j.job_id;
+    RETURN new_cursor;
+  END get_all_employees;
+
+  PROCEDURE get_all_programmer AS
+  BEGIN
+    FOR rec IN (SELECT e.employee_id, e.first_name, e.last_name, j.job_title FROM Employees e
+                JOIN Jobs j ON e.job_id = j.job_id 
+                WHERE j.job_title = 'Programmer')
+    LOOP
+      DBMS_OUTPUT.PUT_LINE('Employee ID: ' || rec.employee_id || ', Employee Name: ' || rec.first_name || ' ' || rec.last_name || ', Job Title: ' || rec.job_title);
+    END LOOP;
+  END get_all_programmer;
+
+  FUNCTION get_all_programmers RETURN SYS_REFCURSOR AS
+    new_cursor SYS_REFCURSOR;
+  BEGIN
+    OPEN new_cursor FOR
+      SELECT e.employee_id, e.first_name, e.last_name, j.job_title FROM Employees e
+      JOIN Jobs j ON e.job_id = j.job_id 
+      WHERE j.job_title = 'Programmer';
+    RETURN new_cursor;
+  END get_all_programmers;
+
+  PROCEDURE cluster_employee AS
+  BEGIN
+    FOR rec IN (SELECT j.job_id, j.job_title, COUNT(e.employee_id) AS count_employees, j.min_salary, j.max_salary
+                FROM Jobs j
+                LEFT JOIN Employees e ON j.job_id = e.job_id
+                GROUP BY j.job_id, j.job_title, j.min_salary, j.max_salary)
+    LOOP
+      DBMS_OUTPUT.PUT_LINE('Job ID: ' || rec.job_id || ', Job Title: ' || rec.job_title || ', Employee Count: ' || rec.count_employees || ', Wage Range: ' || rec.min_salary || '-' || rec.max_salary);
+    END LOOP;
+  END cluster_employee;
+
+  FUNCTION cluster_employees RETURN SYS_REFCURSOR AS
+    new_cursor SYS_REFCURSOR;
+  BEGIN 
+    OPEN new_cursor FOR
+      SELECT j.job_id, j.job_title, COUNT(e.employee_id) AS count_employees, j.min_salary, j.max_salary FROM Jobs j
+      LEFT JOIN Employees e ON j.job_id = e.job_id
+      GROUP BY j.job_id, j.job_title, j.min_salary, j.max_salary;
+    RETURN new_cursor;
+  END cluster_employees;
+
+  PROCEDURE get_all_managers AS
+  BEGIN
+    FOR rec IN (SELECT e.employee_id, e.first_name, e.last_name, j.job_title FROM Employees e
+                JOIN Jobs j ON e.job_id = j.job_id 
+                WHERE JOB_TITLE LIKE '%Manager')
+    LOOP
+      DBMS_OUTPUT.PUT_LINE('Employee ID: ' || rec.employee_id || ', Employee Name: ' || rec.first_name || ' ' || rec.last_name || ', Job Title: ' || rec.job_title);
+    END LOOP;
+  END get_all_managers;
+
+  FUNCTION get_all_managerss RETURN SYS_REFCURSOR AS
+    new_cursor SYS_REFCURSOR;
+  BEGIN
+    OPEN new_cursor FOR
+      SELECT e.employee_id, e.first_name, e.last_name, j.job_title
+      FROM Employees e
+      JOIN Jobs j ON e.job_id = j.job_id
+      WHERE j.job_title LIKE '%Manager';
+    RETURN new_cursor;
+  END get_all_managerss;
+
+  PROCEDURE get_manager(id IN NUMBER) AS
+  BEGIN
+    FOR rec IN (SELECT e.employee_id, e.first_name, e.last_name, e.manager_id FROM Employees e
+                WHERE e.manager_id = id AND e.employee_id <> id)
+    LOOP
+      DBMS_OUTPUT.PUT_LINE('Employee ID: ' || rec.employee_id || ', Employee Name: ' || rec.first_name || ' ' || rec.last_name || ', Manager ID: ' || rec.manager_id );
+    END LOOP;
+  END get_manager;
+
+  FUNCTION get_managerr(id IN NUMBER) RETURN SYS_REFCURSOR AS
+    result_cursor SYS_REFCURSOR;
+  BEGIN
+    OPEN result_cursor FOR
+      SELECT e.employee_id, e.first_name, e.last_name, e.manager_id
+      FROM Employees e
+      WHERE e.manager_id = id AND e.employee_id <> id;
+    RETURN result_cursor;
+  END get_managerr;
+
+END package_employee_addons;
+/
+
+7. log_employee
+
+CREATE TABLE log_employee(
+  log_id NUMBER,
+  employee_id NUMBER,
+  log_date DATE,
+  log_description VARCHAR2(200)
+  );
+
+8. Create a Trigger
+
+CREATE SEQUENCE log_employee_seq;
+
+CREATE OR REPLACE TRIGGER trg_employee_activity
+AFTER INSERT OR UPDATE OR DELETE ON Employees
+FOR EACH ROW
+
+DECLARE
+  v_log_id NUMBER;
+  v_employee_ID NUMBER;
+  v_log_date DATE;
+  v_log_desc VARCHAR2(200);
+BEGIN
+  v_log_date := SYSDATE;
+
+  IF INSERTING THEN
+    v_log_desc := 'Employee with ID ' || :NEW.employee_id || ' inserted.';
+  ELSIF UPDATING THEN
+    v_log_desc := 'Employee with ID ' || :NEW.employee_id || ' updated.';
+  ELSIF DELETING THEN
+    v_log_desc := 'Employee with ID ' || :OLD.employee_id || ' deleted.';
+  END IF;
+  
+  INSERT INTO log_employee (log_id, employee_id, log_date, log_description)
+  VALUES (log_employee_seq.NEXTVAL, :NEW.employee_id, SYSDATE, v_log_desc);
+END;
+/
