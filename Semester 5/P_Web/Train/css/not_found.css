@@ -1,0 +1,98 @@
+      .nav-link:hover {
+        color: rgb(254, 77, 0);
+      }
+
+      .form-control-secondary:hover{
+        border-color: rgb(254, 77, 0);
+      }        
+
+      .form-control-secondary:hover::placeholder {
+        color: #fe4d00;
+      }
+      .btn-outline-orange:hover {
+        color: rgb(254, 77, 0);
+        border-color: rgb(254, 77, 0);
+        background-color: transparent;
+      }
+      
+      .button-grid {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10px;
+      }
+      
+      .form-popup {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 3px solid 212529;
+        z-index: 9;
+      }
+
+      .form-container {
+        max-width: 500px;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: var(--form-bg-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-container input[type=text], .form-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      .form-container .btn-success {
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+      }
+
+      .form-container .cancel {
+        background-color: red;
+      }
+
+      .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      .btn-back {
+        outline: auto;
+        transition: background-color 0.3s;
+        background-color: transparent; /* Background color */
+      }
+
+      .btn-back:hover {
+        color: rgb(254, 77, 0); /* Text color (full color) */
+        outline: 1px solid rgb(254, 77, 0); /* Border color */
+        background-color: transparent; /* Background color */
+      }
