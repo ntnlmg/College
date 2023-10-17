@@ -1,3 +1,5 @@
 # College
 
-https://github.com/ntnlmg/College/blob/main/Semester%205/P_Web/Train/index.html
+[../Web/partyinyourarea/index.html](/Web/partyinyourarea/index.html)
+[../Semester%205/P_Web/Train/index.html] (/Semester%205/P_Web/Train/index.html)
+
