@@ -9,14 +9,6 @@
   .nav-link:hover {
     color: rgb(254, 77, 0);
   }
-  
-  .form-control-secondary:hover{
-    border-color: #fe4d00; /* Border color for the input field */
-  }        
-  
-  .form-control-secondary:hover::placeholder {
-    color: #fe4d00;
-  }
 
   .btn-outline-cust{
     color: rgb(254, 77, 0); /* Text color (full color) */
@@ -44,6 +36,16 @@
     gap: 10px; /* Mengatur jarak antara elemen-elemen */
   }
   
+  .input-grid {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed to control the spacing between inputs. */
+  }
+  
+  .input-grid input {
+    flex: 1;
+  }
+    
+  
   .form-popup {
     display: none;
     flex-direction: column;
@@ -63,6 +65,7 @@
     padding: 10px;
     border-radius: 15px; /* Sesuaikan nilai sesuai dengan preferensi Anda */
     background-color: var(--cust-bg-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   }
 
   /* Full-width input fields */
@@ -91,7 +94,7 @@
 
   /* Add a red background color to the cancel button */
   .form-container .cancel {
-    background-color: red;
+    background-color: rgb(255, 0, 166);
   }
 
   /* Add some hover effects to buttons */
