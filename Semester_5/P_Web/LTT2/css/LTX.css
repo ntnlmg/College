@@ -21,7 +21,7 @@
     border-color: rgb(254, 77, 0); /* Border color */
     background-color: transparent; /* Background color */
   }
-  
+
   /*Login pop-up*/
   /* The popup form - hidden by default */
   .button-grid {
@@ -38,6 +38,7 @@
   .input-grid input {
     flex: 1;
   }
+  
   
   .form-popup {
     display: none;
@@ -142,14 +143,4 @@
     transform: translateY(-5px);
   }
   
-  .form-control-orange:hover{
-    color: rgb(254, 77, 0); /* Text color (full color) */
-    border-color: rgb(254, 77, 0); /* Border color */
-    background-color: transparent; /* Background color */
-  }
-  
-  .form-control-orange:focus {
-    border-color: orange; /* Atur warna sesuai yang Anda inginkan */
-    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25); /* Optional: Efek bayangan saat dalam fokus */
-  }
   
