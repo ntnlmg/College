@@ -1,0 +1,163 @@
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  section{
+    margin-bottom: 40px;
+  }
+  .nav-link:hover {
+    color: rgb(254, 77, 0);
+  }
+
+  .col-equal-height {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .col-equal-height .card {
+    flex: 1;
+  }
+
+  h4:hover{
+    text-decoration: underline;
+  }
+
+  .btn-outline-cust{
+    color: rgb(254, 77, 0); /* Text color (full color) */
+    border-color: rgb(254, 77, 0); /* Border color */
+    background-color: transparent; /* Background color */
+  }
+  /* Styles for the button when hovered over */
+  .btn-outline-secondary:hover {
+    color: rgb(254, 77, 0); /* Text color (full color) */
+    border-color: rgb(254, 77, 0); /* Border color */
+    background-color: transparent; /* Background color */
+  }
+
+  .rounded-circle-with-border {
+    border: 1px auto; /* Change the color and width as needed */
+    border-radius: 50%; /* Creates a rounded shape (circle) */
+    opacity: 0.7; /* Adjust the opacity value (0.7 = 70% opacity) */
+  }
+  
+  /*Login pop-up*/
+  /* The popup form - hidden by default */
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Menyusun dua kolom */
+    gap: 10px; /* Mengatur jarak antara elemen-elemen */
+  }
+  
+  .input-grid {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed to control the spacing between inputs. */
+  }
+  
+  .input-grid input {
+    flex: 1;
+  }
+    
+  
+  .form-popup {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid 212529;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 15px; /* Sesuaikan nilai sesuai dengan preferensi Anda */
+    background-color: var(--cust-bg-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  /* Set a style for the submit/login button */
+  .form-container .btn-success {
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: rgb(255, 0, 166);
+  }
+
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  /* Dark mode*/
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
+
+  /* Back-to-top */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dc143c;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+  }
+  
+  .back-to-top span {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.2s ease-out;
+  }
+  
+  .back-to-top:hover {
+    background-color: #be1a3b;
+  }
+  .back-to-top:hover span {
+    transform: translateY(-5px);
+  }
+  
