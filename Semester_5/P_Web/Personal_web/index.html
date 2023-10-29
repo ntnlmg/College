@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portofolio | ntnlmg</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat" />
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
@@ -14,22 +14,33 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm text-body-secondary">
       <div class="container">
         <!-- left nav start-->
-        <a class="navbar-brand" href="#">
-          <span class="navbar-brand mb-0 h1">NTNLMG</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <section>
+          <a class="navbar-brand" href="#"
+            <span class="navbar-brand mb-0 h1 active" aria-current="page" style="font-size: 38px; letter-spacing: 0.184211em">NTNLMG</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </section>
         <!-- left nav end-->
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
             <li>
-              <a class="nav-link" aria-disabled="true">Projects</a>
+              <!-- <a class="nav-link" aria-disabled="true">Projects</a> -->
+              <div class="dropdown" style="text-decoration: none">
+                <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-disabled="true" >Projects</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Link 1</a></li>
+                  <!-- <li><a class="dropdown-item" href="#">Link 2</a></li>
+                  <li><a class="dropdown-item" href="#">Link 3</a></li> -->
+                </ul>
+              </div>
             </li>
             <li>
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li>
-              <a class="nav-link">Contact</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
           <!-- right nav start-->
@@ -77,19 +88,31 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="Product.html#SD">
-              <img src="img/dark_hour.JPG" class="d-block w-100" alt="linus" />
+            <a href="#">
+              <img src="img/dark_hour.JPG" class="d-block w-100" alt="linus" /> 
             </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h2>First slide label</h2>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <a href="Product.html#SCLS">
+            <a href="#">
               <img src="img/dark_hour.JPG" class="d-block w-100" alt="linus" />
             </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Second slide label</h2>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <a href="Product.html#bread">
+            <a href="#">
               <img src="img/dark_hour.JPG" class="d-block w-100" alt="linus" />
             </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Third slide label</h2>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -103,6 +126,7 @@
       </div>
     </section>
     <!-- carousel end -->
+    <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
