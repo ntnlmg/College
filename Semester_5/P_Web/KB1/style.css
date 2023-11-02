@@ -111,7 +111,14 @@ a:hover {
   border: 0;
 }
 
-.btn-outline-primary {
+.accordion-button:not(.collapsed) {
+  color: inherit;
+  background-color: inherit;
+  box-shadow: none;
+}
+
+.btn-outline-primary,
+btn {
   color: #db4105;
   border-color: #db4105;
 }
@@ -162,4 +169,12 @@ a div div div.card-body {
 a div div div.card-body {
   color: inherit;
   text-decoration: none;
+}
+
+.text-primary {
+  color: #db4105 !important;
+}
+
+.bg-primary {
+  background-color: #db4105 !important;
 }

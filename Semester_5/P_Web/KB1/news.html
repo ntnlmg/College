@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="img/LTT_Logo.png" type="image/png" />
-    <title>Linus Tech Tips Store</title>
-    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <title>Linus Tech Tips</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -94,7 +93,7 @@
                     </svg>
                   </a>                  
                 <li class="col-2" style="width: fit-content">
-                  <a href="#">
+                  <a href="login.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                       <path
                         d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
@@ -134,36 +133,136 @@
     </section>
 
     <!-- content -->
-    <main class="container justify-content-center align-items-center p-5">
-      <div class="container p-5" style="max-width: 540px; overflow: hidden">
-        <div class="form-signin w-100 m-auto">
-          <form class="p-5 text-center fade">
-            <h1 class="mb-3 pt-5">Login</h1>
-
-            <div class="form-floating my-2">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-              <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating mt-2">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-              <label for="floatingPassword">Password</label>
-            </div>
-
-            <div class="text-start my-3">
-              <a href="coming_soon.html">Forgot your password?</a>
-            </div>
-            <a href="coming_soon.html" class="btn btn-outline-primary w-50" type="submit">Sign in</a>
-            <div class="text-center my-3">
-              <a href="regist.html">Create account</a>
-            </div>
-          </form>
+    <main>
+      <section class="container p-5">
+        <div class="text-center">
+          <h1>The Newsletter Archive</h1>
         </div>
-      </div>
+        <div class="album py-5">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <!-- news1 -->
+              <a href="coming_soon.html" id="sdbc" style="text-decoration: none;">
+                <div id="SCLS" class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/Screwdriver_Birthday_Cake.png" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center">Tools, Tools, Tools!</h4>
+                      <p class="text-truncate">Believe it or not, it has been a YEAR since we launched the LTT Screwdriver. One. Whole. Year. And while we’ve been relatively quiet on new tool launches during that...</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- news2 -->
+              <a href="coming_soon.html" id="socks" style="text-decoration: none;">
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/socks.jpg" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center">Cracking the Sock Code</h4>
+                      <p class="text-truncate">What is Linus if not the tech tip man, the socks and sandals man, and the dropper of all things. With that reputation, as well as our amazing products on lttstore, people always ask….</p>                 
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- news3 -->
+              <a href="coming_soon.html" id="magnetic" style="text-decoration: none;">
+                <div class="col col-equal-height p-1  ">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/unnamed_38d23ed8-857d-4fa8-a9c7-021791980d14.png" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center">The magnetism between us in undeniable</h4>
+                      <p class="text-truncate">As I'm sure you've already seen, we finally launched the LTT Screwdriver! It slices! It dices! Well... no, it doesn't slice, or dice. But it does screw, drive, and in...</p>
+                    </div>  
+                  </div>
+                </div>
+              </a>
+              <!-- news4 -->
+              <a href="coming_soon.html" style="text-decoration: none;">
+                <div id="SCLS" class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/unnamed_4.jpg" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center">Things are changing</h4>
+                      <p class="text-truncate">Who would've thought that making a ratcheting screwdriver would be so darn difficult?
+                        <br>It's been a massive journey... but we're almost at the end. Kyle has an update to share about one of the FINAL changes we're making before production. It's a big one, but it's the right one...</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- news5 -->
+              <a href="coming_soon.html" style="text-decoration: none;">
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/unnamed_3.jpg" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center">We're back and more shielded than ever</h4>
+                      <p class="text-truncate">Happy 2022 y'all! We've had a busy start to the year, with a LOT of time spent researching (see: destroying) some samples to get us in a good place on new projects... and oh boy, does Kyle have a story for you!
+                        <br>If you haven't seen our recent LTT videos featuring our new cable tester, they are definitely recommended (though not required) viewing to boost your understanding of some of the concepts outlined in this update.
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- news6 -->
+              <a href="coming_soon.html" style="text-decoration: none;">
+                <div class="col col-equal-height p-1  ">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/unnamed_2.jpg" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center">You're rubbing off on me!</h4>
+                      <p class="text-truncate">Oh yeah it's newsletter time again!! This week we have the one and only Bridget, our Fashion Designer, breaking down a pretty common theme in a lot of clothing manufacturing - Color Fastness and the challenges of making incredible multi-colored garments.</p>
+                    </div>  
+                  </div>
+                </div>
+              </a>
+              <!-- news7 -->
+              <a href="coming_soon.html"style="text-decoration: none;">
+                <div id="SCLS" class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/unnamed_2.png" alt="">
+                    <div class="card-body">
+                      <h4 class=" text-center">This was a BIG problem for us...</h4>
+                      <p class="text-truncate">Creating the perfect LTT Screwdriver has not been easy... and unfortunately it is not quite done yet.
+                        <br>We'll have more info about a release date in 2022, but to keep y'all up to date Kyle wanted to give some insight into one of the biggest recent challenges we've had with our injection molding process.</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- news8 -->
+              <a href="coming_soon.html" style="text-decoration: none;">
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/unnamed_1.png" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center">More free items in 2022??</h4>
+                      <p class="text-truncate">For most of lttstore.com's life, we've offered a free sticker pack with every order (while supplies last). And of course, that tradition is continuing into 2022.
+                        <br>Here's a sneak peek of the sticker pack you can expect to find in your orders next year.</p>                 
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- news9 -->
+              <a href="coming_soon.html" style="text-decoration: none;">
+                <div class="col col-equal-height p-1  ">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top h-100" src="img/news/unnamed_1.jpg" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center">That's no moon. It's a space station...</h4>
+                      <p class="text-truncate">Not everything that our team works on is directly related to making something that you might hold in your hands one day. There’s a lot of testing and analysis that goes on behind the scenes, and a lot of that starts out with certifying that a product will do what we say it should, but quickly evolves into a much more general application.
+                        <br>Kyle’s omnidirectional speaker is a perfect example.</p>
+                    </div>  
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    
+
     <!-- footer -->
     <section>
-      <a href="#" class="back-to-top">
+      <a href="#" class="back-to-top h-100">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
           <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
         </svg>
@@ -208,7 +307,7 @@
               </div>
             </div>
   
-            <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
+            <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top h-100">
               <p>
                 <small>I do not own any of this products, this is just for my school web project. 
                   <br>You can check the artist in here <a href="https://https://www.lttstore.com">lttstore.com</a>
