@@ -8,9 +8,13 @@ body {
 }
 
 a {
-  /* text-decoration: none; */
   color: inherit;
-  /* cursor: text; */
+  /* text-decoration: none; */
+}
+
+a:hover {
+  color: #db4105;
+  text-decoration: none;
 }
 
 .nav-link {
@@ -19,12 +23,20 @@ a {
 }
 
 .nav-link:hover {
+  color: #db4105;
+}
+
+.navbar-nav .nav-link.active {
+  color: #db4105;
   text-decoration: underline;
 }
 
-.active {
-  color: aqua;
-  text-decoration: underline; /* If you want to add an underline */
+.dropdown-menu-gear {
+  min-width: 13em;
+}
+
+.dropdown-menu-cloth {
+  min-width: 25em;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -77,6 +89,77 @@ a {
   }
 }
 
+.modal-fade {
+  animation: modal-fade 0.5s both;
+}
+
+@keyframes modal-fade {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.form-floating a {
+  right: 50px;
+  position: absolute;
+}
+
 .accordion-item {
   border: 0;
+}
+
+.btn-outline-primary {
+  color: #db4105;
+  border-color: #db4105;
+}
+
+.btn.btn-outline-primary:hover {
+  border-color: #db4105;
+  background-color: #db4105;
+  box-shadow: none;
+}
+
+.btn.btn-outline-primary:active {
+  background-color: #db4105;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc143c#db4105;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+
+.back-to-top svg {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: 0.2s ease-out;
+}
+
+.back-to-top:hover {
+  background-color: #be1a3b;
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-5px);
+}
+
+a div div div.card-body {
+  color: inherit;
+  text-decoration: none;
+}
+a div div div.card-body {
+  color: inherit;
+  text-decoration: none;
 }

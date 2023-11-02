@@ -6,43 +6,47 @@
     <link rel="icon" href="img/LTT_Logo.png" type="image/png" />
     <title>Linus Tech Tips Store</title>
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- nav -->
     <section>
       <nav class="navbar navbar-expand-lg px-5">
         <div class="container-fluid">
           <!-- left brand name -->
-          <a class="navbar-brand" href="#">
-            <!-- <img src="img/ocean_mocktail.png" width="50" height="50" alt="ocean_mocktail" class="d-inline-block align-text-top" /> -->
-            <img src="img/LTT_Logo.png" alt="LTT_logo" />
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- center nav link -->
+          <div>
+            <a class="navbar-brand" href="#" style="margin-right: 48px;">
+              <img src="img/LTT_Logo.png" alt="LTT_logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <!-- nav link & icon -->
           <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <!-- center nav link -->
             <ul class="navbar-nav mx-auto vertical-align-center" style="list-style: none">
               <li class="ms-5">
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="ms-5">
                 <div class="dropdown">
-                  <a class="dropdown nav-link">Gear</a>
-                  <div class="dropdown-menu text-center multi-column">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-6 p-0">
-                          <a class="dropdown-item" href="#">Link 1</a>
-                          <a class="dropdown-item" href="#">Link 2</a>
-                          <a class="dropdown-item" href="#">Link 3</a>
-                        </div>
-                        <div class="col-6 p-0">
-                          <a class="dropdown-item" href="#">Link 4</a>
-                          <a class="dropdown-item" href="#">Link 5</a>
-                          <a class="dropdown-item" href="#">Link 6</a>
-                        </div>
+                  <a class="dropdown nav-link" href="coming_soon.html">Gear</a>
+                  <div class="dropdown-menu dropdown-menu-gear multi-column">
+                    <div class="row m-2">
+                      <div class="col-6">
+                        <a class="dropdown-item" href="coming_soon.html">Bags</a>
+                        <a class="dropdown-item" href="coming_soon.html">Bottles</a>
+                        <a class="dropdown-item" href="coming_soon.html">Deskpads</a>
+                        <a class="dropdown-item" href="coming_soon.html">Tools</a>
+                      </div>
+                      <div class="col-6">
+                        <a class="dropdown-item" href="coming_soon.html">Pillow</a>
+                        <a class="dropdown-item" href="coming_soon.html">Plush</a>
+                        <a class="dropdown-item" href="coming_soon.html">Stikers</a>
+                        <a class="dropdown-item" href="coming_soon.html">Other</a>
                       </div>
                     </div>
                   </div>
@@ -50,20 +54,28 @@
               </li>
               <li class="ms-5">
                 <div class="dropdown">
-                  <a class="dropdown nav-link">Clothing</a>
-                  <div class="dropdown-menu text-center multi-column" style="width: fit-content">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-6 p-0">
-                          <a class="dropdown-item" href="coming_soon.html">Link 1</a>
-                          <a class="dropdown-item" href="#">Link 2</a>
-                          <a class="dropdown-item" href="#">Link 3</a>
-                        </div>
-                        <div class="col-6 p-0">
-                          <a class="dropdown-item" href="#">Link 4</a>
-                          <a class="dropdown-item" href="#">Link 5</a>
-                          <a class="dropdown-item" href="#">Link 6</a>
-                        </div>
+                  <a class="dropdown nav-link"  href="coming_soon.html">Clothing</a>
+                  <div class="dropdown-menu dropdown-menu-cloth multi-column">
+                    <div class="row m-2">
+                      <div class="col-4">
+                        <a class="dropdown-item" href="coming_soon.html">Tops</a>
+                        <a class="dropdown-item" href="coming_soon.html">T-Shirts</a>
+                        <a class="dropdown-item" href="coming_soon.html">Sweaters</a>
+                        <a class="dropdown-item" href="coming_soon.html">Long Sleeve</a>
+                        <a class="dropdown-item" href="coming_soon.html">Jackets</a>
+                      </div>
+                      <div class="col-4">
+                        <a class="dropdown-item" href="coming_soon.html">Bottoms</a>
+                        <a class="dropdown-item" href="coming_soon.html">Pants</a>
+                        <a class="dropdown-item" href="coming_soon.html">Shorts</a>
+                        <a class="dropdown-item" href="coming_soon.html">Swimwear</a>
+                      </div>
+                      <div class="col-4">
+                        <a class="dropdown-item" href="coming_soon.html">Unisex</a>
+                        <a class="dropdown-item" href="coming_soon.html">Mens</a>
+                        <a class="dropdown-item" href="coming_soon.html">Womens</a>
+                        <a class="dropdown-item" href="coming_soon.html">Underwear</a>
+                        <a class="dropdown-item" href="coming_soon.html">Accessories</a>
                       </div>
                     </div>
                   </div>
@@ -77,12 +89,11 @@
             <ul class="navbar-nav" style="list-style: none">
               <div class="row">
                 <li class="col-2" style="width: fit-content">
-                  <a href="#">
+                  <a data-bs-toggle="modal" data-bs-target="#searchModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
-                  </a>
-                </li>
+                  </a>                  
                 <li class="col-2" style="width: fit-content">
                   <a href="login.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -92,7 +103,7 @@
                   </a>
                 </li>
                 <li class="col-2" style="width: fit-content">
-                  <a href="#">
+                  <a href="cart.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                       <path
                         d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -104,42 +115,61 @@
           </div>
         </div>
       </nav>
+      <!-- search modal -->
+      <div class="modal modal-fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="margin-top: 0px;">
+          <div class="modal-content">
+            <div class="modal-body" id="exampleModalLabel">
+              <form class="d-flex form-floating align-items-center" role="search">
+                <input class="form-control me-2" type="search"id="search" placeholder="Search" aria-label="Search">
+                <a href="coming_soon.html">
+                  <i class="bi bi-search"></i>
+                </a>
+                <Label for="search">Search</Label>
+                <button class="btn btn-close" data-bs-dismiss="modal" aria-label="Close" type="submit"></button>
+              </form>
+            </div>            
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- content -->
     <main>
       <!-- carousel -->
       <section class="container-fluid px-4 py-3">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div id="carouselExample" class="carousel slide pointer-event" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" class=""></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" class=""></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" class=""></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4" class=""></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
               <a href="product.html">
-                <img src="img/ScrewDriver.webp" class="d-block w-100 rounded-4" alt="ScrewDriver" />
+                <img src="img/ScrewDriver.webp" class="d-block w-100 rounded-4" alt="ScrewDriver">
               </a>
             </div>
             <div class="carousel-item rounded">
               <a href="product.html">
-                <img src="img/LongSleeve.webp" class="d-block w-100 rounded-4" alt="ShortCircuitLongSleeve" />
+                <img src="img/LongSleeve.webp" class="d-block w-100 rounded-4" alt="ShortCircuitLongSleeve">
               </a>
             </div>
             <div class="carousel-item">
               <a href="product.html#bread">
-                <img src="img/Plushie.webp" class="d-block w-100 rounded-4" alt="Plushie" />
+                <img src="img/Plushie.webp" class="d-block w-100 rounded-4" alt="Plushie">
               </a>
             </div>
             <div class="carousel-item">
               <a href="product.html#jogger">
-                <img src="img/sportsjogger.png" class="d-block w-100 rounded-4" alt="PremiumSportsJoggers" />
+                <img src="img/sportsjogger.png" class="d-block w-100 rounded-4" alt="PremiumSportsJoggers">
               </a>
             </div>
             <div class="carousel-item">
               <a href="product.html#hoodie">
-                <img src="img/dropout.png" class="d-block w-100 rounded-4" alt="DropOutHoodie&Sweatpants" />
+                <img src="img/dropout.png" class="d-block w-100 rounded-4" alt="DropOutHoodie&amp;Sweatpants">
               </a>
             </div>
           </div>
@@ -153,33 +183,43 @@
           </button>
         </div>
       </section>
+      
       <!-- fav items -->
       <section class="container p-5">
-        <div class="row">
-          <div class="col h-100">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col col-equal-height-e col-lg-3 p-1 ">
             <h1>Check Out Our Favorite</h1>
             <div>
-              <button class="btn btn-lg btn-secondary" onclick="document.location='.html'">View All</button>
+              <button class="btn btn-lg btn-outline-primary" onclick="document.location='.html'">View All</button>
             </div>
           </div>
-          <div class="col h-100">
+          <div class="col col-equal-height-e col-lg-3 p-1 ">
             <div class="card shadow-sm">
-              <img class="card-img-top" src="img/backpack.png" width="" alt="" />
+              <img class="card-img-top" src="img/backpack.png" width="" alt="">
               <div class="card-body">
                 <div class="accordion" id="accordionExample">
                   <div class="row accordion-item align-items-center justify-content-centers">
-                    <div class="accordion-header col-8">
-                      <div data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <h2>Backpack</h2>
+                    <div class="accordion-header col-7">
+                      <div data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        <h4><br> Backpack</h4>
                         <p class="card-text">$249.99 USD</p>
                       </div>
                     </div>
-                    <div class="col-2" style="width: fit-content;">
+                    <div class="col-3 p-0" style="width: fit-content;">
                       <a href="#" class="btn btn-outline-success">Buy Now</a>
                     </div>  
-                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                        <p class="m-0">100% Polyester</p>
+                        <p>Main fabric - 900D * 900D, 100% Recycled Polyester, P/D + W/R + PU Coating</p>  
+                        <p>Ripstop lining - 75D * 150D, 100% Recycled Polyester, P/D + W/R + TPU Coating</p>                        
+                        <p class="m-0">Care instructions:
+                            <li>Spot clean with mild detergent and a damp cloth</li>
+                            <li>Do not machine wash</li>
+                            <li>Do not machine dry</li>
+                            <li>Do not iron</li>
+                            <li>Do not bleach</li>
+                            <li>Do not dry clean</li>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -187,103 +227,418 @@
               </div>
             </div>
           </div>
-          <div class="col h-100">
+          <div class="col col-equal-height-e col-lg-3 p-1 ">
             <div class="card shadow-sm">
-              <img class="card-img-top" src="img/sportspants.png" alt="" />
-              <div class="card-body text-center">
-                <h4>Premium Sports Jogger</h4>
-                <p class="card-text">$49.99 USD</p>
+              <img class="card-img-top" src="img/sportspants.png" alt="">
+              <div class="card-body">
+                <div class="accordion" id="accordionExample">
+                  <div class="row accordion-item align-items-center justify-content-centers">
+                    <div class="accordion-header col-7 ">
+                      <div data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                        <h4>Sports Jogger</h4>
+                        <p class="card-text">$49.99 USD</p>
+                      </div>
+                    </div>
+                    <div class="col-3 p-0" style="width: fit-content;">
+                      <a href="#" class="btn btn-outline-success">Buy Now</a>
+                    </div>  
+                    <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Material: 75% Nylon, 25% Spandex</p>
+                        <p class="m-0">Care instructions:
+                          <li>Machine wash cold with like colours</li>
+                          <li>Tumble dry low</li>
+                          <li>Do not machine dry</li>
+                          <li>Do not iron</li>
+                          <li>Do not bleach</li>
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col col-equal-height-e col-lg-3 p-1 ">
             <div class="card shadow-sm">
-              <img class="card-img-top" src="img/dropout2.png" alt="" />
-              <div class="card-body text-center">
-                <h4>Dropout Hoodie</h4>
-                <p class="card-text">$59.99 USD</p>
+              <img class="card-img-top" src="img/dropout2.png" alt="">
+              <div class="card-body">
+                <div class="accordion" id="accordionExample">
+                  <div class="row accordion-item align-items-center justify-content-centers">
+                    <div class="accordion-header col-7">
+                      <div data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                        <h4>Dropout Hoodie</h4>
+                        <p class="card-text">$59.99 USD</p>
+                      </div>
+                    </div>
+                    <div class="col-3 p-0" style="width: fit-content;">
+                      <a href="#" class="btn btn-outline-success">Buy Now</a>
+                    </div>  
+                    <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p>Body: 100% Cotton
+                          <br>Contrast: 95% Cotton, 5% Spandex
+                        </p>
+                        <p class="m-0">Care instructions:
+                          <li>Machine wash cold with like colours</li>
+                          <li>Lay flat to dry</li>
+                          <li>Iron low</li>
+                          <li>Do not bleach</li>
+                            
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <!-- best seller -->
       <section class="container p-5">
+        <div>
+          <div class="text-center">
+            <h1>Best Seller</h1>
+          </div>
+          <div class="album py-5">
+            <div class="container">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <!-- product1 -->
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/product/lttstore_Screwdrivers_TransparencyFile.png" alt="">
+                    <div class="card-body">
+                      <div class="accordion" id="accordionExample">
+                        <div class="row accordion-item align-items-center justify-content-centers">
+                          <div class="col-8" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            <h2><br>Screwdriver</h2>
+                            <p class="card-text">$69.99 USD</p>
+                          </div>
+                          <div class="col-4" style="width: fit-content;">
+                            <a href="#" class="btn btn-outline-success">Buy Now</a>
+                          </div>  
+                          <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>Handle, selector, end cap, shoulder ring, bit tube: Triax 1120</p>
+                              <p>Bit clips, slotted spacer, clip retaining pin, ratchet kicker, ratchet transfer cup, black accent ring: Delrin 500</p> 
+                              <p>Ratchet retaining clip, ratchet shaft collar: Acetal</p>  
+                              <p>Orange accent ring: ABS</p>         
+                              <p>Cast ratchet housing & integrated bit clip spline shaft: Zinc (ZAMAK 3)</p>
+                              <p>Silver rotating shaft: Passivated 303 stainless steel</p>  
+                              <p>Ratchet gear: S2 steel (HRC60 +/- 2)</p>
+                              <p>Ratchet springs: Spring steel 0.35mm gauge</p>
+                              <p>Broach magnet: N52 (5.4N+ pull force)</p> 
+                              <p>Ball bearings: Stainless steel</p>
+                              <p>Pawls: K5 steel (HRC 45-50)</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                </div>
+                <!-- product2 -->
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/product/StandardBitSet_lttstoreImage-01_1.png" alt="">
+                    <div class="card-body">
+                        <div class="accordion" id="accordionExample">
+                          <div class="row accordion-item align-items-center justify-content-centers">
+                            <div class="accordion-header col-8">
+                              <div data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                <h2>Screwdriver Bit Set</h2>
+                                <p class="card-text">$6.99 USD</p>
+                              </div>
+                            </div>
+                            <div class="col-4" style="width: fit-content;">
+                              <a href="#" class="btn btn-outline-success">Buy Now</a>
+                            </div>  
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <p class="m-0">S2 Tool Steel with Black Phosphate coating</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>                  
+                    </div>
+                  </div>
+                </div>
+                <!-- product3 -->
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/product/lttstore_40ozCapacitorWaterBottles_TransparencyFile.png" alt="">
+                    <div class="card-body">
+                      <div class="accordion" id="accordionExample">
+                        <div class="row accordion-item align-items-center justify-content-centers">
+                          <div class="accordion-header col-8">
+                            <div data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                              <h2>Capacitor 
+                                <br>Water Bottle
+                                <br>40oz
+                              </h2>
+                              <p class="card-text">$29.99</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="width: fit-content;">
+                            <a href="#" class="btn btn-outline-success">Buy Now</a>
+                          </div>  
+                          <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>
+                                <ul class="m-0">
+                                  <li>Made with double-walled 18/8 stainless steel</li>
+                                    <li>Vacuum-insulated</li>
+                                    <li>Powder coated</li>
+                                </ul>  
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>  
+                  </div>
+                </div>
+                <!-- product4 -->
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/product/lttstore_Series2Pin_Bundle_TransparencyFile.png" alt="">
+                    <div class="card-body">
+                      <div class="accordion" id="accordionExample">
+                        <div class="row accordion-item align-items-center justify-content-centers">
+                          <div class="accordion-header col-8">
+                            <div data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                              <h3>LTT Northern Lights desk pad</h3>
+                              <p class="card-text">$29.99 USD</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="width: fit-content;">
+                            <a href="#" class="btn btn-outline-success">Buy Now</a>
+                          </div>  
+                          <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>Surface:    Soft Smooth Micro-texture Cloth</p>
+                              <p>Base:    3.5mm Non-slip eco-friendly natural rubber base</p>
+                              <p>Edge:  Anti-fray stitching</p>
+                              <p>Care instructions: We recommend spot-cleaning our desk pads with a damp cloth and a mild soap/detergent (if needed). If the desk pad is especially dirty, machine-wash cold on the delicate cycle, and hang to dry (make sure the cloth surface is facing up if draped over a rack or something similar).</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+
+                <!-- product5 -->
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/product/StubbyScrewdriver2000px-36_e9b7d351-6272-415c-b707-f8193f8dabc31.jpg" alt="">
+                    <div class="card-body">
+                      <div class="accordion" id="accordionExample">
+                        <div class="row accordion-item align-items-center justify-content-centers">
+                          <div class="accordion-header col-8">
+                            <div data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                              <h2> The JerryRig Razor Knife</h2>
+                              <p class="card-text">$14.95 USD</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="width: fit-content;">
+                            <a href="#" class="btn btn-outline-success">Buy Now</a>
+                          </div>  
+                          <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>Made using an Aluminum-Zinc alloy, the JerryRig Knife uses premium materials to ensure it's the perfect weight and size for both your pockets and your hands. The all metal handle is textured with a tessellated hexagon pattern that gives you a confident grip, and the built-in JerryRigEverything belt clip serves as your constant reminder that Life is a DIY project.</p>
+                              <p>The CLEAR knife is made from Polycarbonate, the same stuff they put inside bullet proof glass.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+                <!-- product6 -->
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/product/lttstore_Series2EnamelPins_TransparencyFile.png" alt="">
+                    <div class="card-body">
+                      <div class="accordion" id="accordionExample">
+                        <div class="row accordion-item align-items-center justify-content-centers">
+                          <div class="accordion-header col-8">
+                            <div data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                              <h2>ShortCircuit Hoodie</h2>
+                              <p class="card-text">$89.99 USD</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="width: fit-content;">
+                            <a href="#" class="btn btn-outline-success">Buy Now</a>
+                          </div>  
+                          <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>Body Content: 60% French Terry cotton, 40% polyester</p>
+                              <p>Contrast Content: 57% cotton, 38% polyester, 5% spandex
+                                <br>-Imported
+                              </p>
+                              <p>
+                                <ul>Care instructions:
+                                  <li>Machine wash cold with like colors</li>
+                                  <li>Lay flat to dry</li>
+                                  <li>Iron low</li>
+                                  <li>Do not bleach</li>
+                                </ul>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="product.html" class="btn btn-outline-primary w-50" type="submit">View All</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- newsletters -->
+      <section class="container p-5">
         <div class="text-center">
-          <h1>Best Seller</h1>
+          <h1>The Newsletter Archive</h1>
+        </div>
+        <div class="album py-5">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <!-- news1 -->
+              <a href="news.html" id="sdbc" style="text-decoration: none;">
+                <div id="SCLS" class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/news/Screwdriver_Birthday_Cake.png" alt="">
+                    <div class="card-body">
+                      <h4 class=" text-center text-truncate">Tools, Tools, Tools!</h4>
+                      <p>Believe it or not, it has been a YEAR since we launched the LTT Screwdriver. One. Whole. Year. And while we’ve been relatively quiet on new tool launches during that...</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- news2 -->
+              <a href="news.html" id="socks" style="text-decoration: none;">
+                <div class="col col-equal-height p-1">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/news/socks.jpg" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center text-truncate">Cracking the Sock Code</h4>
+                      <p>What is Linus if not the tech tip man, the socks and sandals man, and the dropper of all things. With that reputation, as well as our amazing products on lttstore, people always ask….</p>                 
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- news3 -->
+              <a href="news.html" id="magnetic" style="text-decoration: none;">
+                <div class="col col-equal-height p-1  ">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="img/news/unnamed_38d23ed8-857d-4fa8-a9c7-021791980d14.png" alt="">
+                    <div class="card-body">
+                      <h4 class="text-center text-truncate">The magnetism between us in undeniable</h4>
+                      <p>As I'm sure you've already seen, we finally launched the LTT Screwdriver! It slices! It dices! Well... no, it doesn't slice, or dice. But it does screw, drive, and in...</p>
+                    </div>  
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="product.html" class="btn btn-outline-primary w-50" type="submit">View All</a>
         </div>
       </section>
     </main>
 
-    <section class="mt-5">
-      <div class="container border-top mt-5">
-        <footer class="pt-5">
-          <div class="row">
-
-            <div class="col-12 col-md-3">
-              <h5 class="uppertext">Info</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Newsletter</a></li>
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Shipping Policy</a></li>
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Customs & Duty Fees</a></li>
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Return Policy</a></li>
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Terms and Conditions</a></li>
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li> 
+    <!-- footer -->
+    <section>
+      <a href="#" class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+          <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+        </svg>
+      </a>
+      <section class="mt-5">
+        <div class="container border-top mt-5">
+          <footer class="pt-5">
+            <div class="row">
+  
+              <div class="col-12 col-md-3">
+                <h5 class="uppertext">Info</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Newsletter</a></li>
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Shipping Policy</a></li>
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Customs & Duty Fees</a></li>
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Return Policy</a></li>
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Terms and Conditions</a></li>
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li> 
+                </ul>
+              </div>
+  
+              <div class="col-6 col-md-3">
+                <h5 class="uppertext">Support</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">FAQ</a></li>
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Features</a></li>
+                  <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Contact Us</a></li>  
+                  <img src="img/LTT_Logo_large.png" class="w-50 h-50" alt="LTT_Logo">
+                </ul>
+              </div>
+  
+              <div class="col-md-5 ">
+                <form>
+                  <h1>Subscribe to our newsletter</h1>
+                  <p class="lead">Monthly digest of what's new and exciting from us.</p>
+                  <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                    <label for="newsletter1" class="visually-hidden">Email address</label>
+                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address"/>
+                    <a href="coming_soon.html" class="btn btn-outline-primary" type="button">Subscribe</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+  
+            <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
+              <p>
+                <small>I do not own any of this products, this is just for my school web project. 
+                  <br>You can check the artist in here <a href="https://https://www.lttstore.com">lttstore.com</a>
+                  <br>This was made by <a href="https://linkedin.com/in/ntnlmg">@ntnlmg</a> with <a href="https://getbootstrap.com">getbootstrap.com</a>
+                </small>
+              </p> 
+                
+              <ul class="list-unstyled d-flex align-items-center">
+                <li class="ms-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                  </svg>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="link-body-emphasis" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                    </svg>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="link-body-emphasis" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                      <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                    </svg>
+                  </a>
+                </li>
               </ul>
             </div>
-
-            <div class="col-6 col-md-3">
-              <h5 class="uppertext">Support</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">FAQ</a></li>
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="coming_soon.html" class="nav-link p-0 text-body-secondary">Contact Us</a></li>  
-                <img src="img/LTT_Logo_large.png" class="w-50 h-50" alt="LTT_Logo">
-              </ul>
-            </div>
-
-            <div class="col-md-5 ">
-              <form>
-                <h1>Subscribe to our newsletter</h1>
-                <p class="lead">Monthly digest of what's new and exciting from us.</p>
-                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                  <label for="newsletter1" class="visually-hidden">Email address</label>
-                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address"/>
-                  <a href="coming_soon.html" class="btn btn-outline-primary" type="button">Subscribe</a>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
-            <p>I do not own any of this arts, this is just for my school web project. <a href="https://linkedin.com/in/ntnlmg" target="_blank">@ntnlmg</a></p> 
-            <ul class="list-unstyled d-flex">
-              <li class="ms-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
-                </svg>
-                </a>
-              </li>
-              <li class="ms-3">
-                <a class="link-body-emphasis" href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                  </svg>
-                </a>
-              </li>
-              <li class="ms-3">
-                <a class="link-body-emphasis" href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                    <path
-                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </footer>
-      </div>
+          </footer>
+        </div>
+      </section>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>

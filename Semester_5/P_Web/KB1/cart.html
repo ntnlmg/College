@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="h-100">
     <!-- nav -->
     <section>
       <nav class="navbar navbar-expand-lg px-5">
@@ -133,9 +133,55 @@
       </div>
     </section>
 
-    <main>
-      
+    <!-- content -->
+    <main class="h-100 fade">
+      <div class="d-flex flex-column justify-content-center align-items-center h-100">
+        <div  class="container justify-content-center align-items-center">
+          <h1 class="mb-2"><strong>Shopping Cart</strong></h1>
+          <table class="table table-hover text-center">
+            <thead>
+              <tr>  
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Backpack</td>
+                <td>1</td>
+                <td>$249.99 USD</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Stubby Screwdriver</td>
+                <td>1</td>
+                <td>$59.99 USD</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Capacitor Water Bottle 40oz</td>
+                <td>1</td>
+                <td>$29.99 USD</td>
+              </tr>
+              <tr class="no-border">
+                <td></td>
+                <td></td>
+                <th>Subtotal</th>
+                <th>$339.97 USD</th>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center">
+            <p>Taxes and shipping calculated at checkout</p>
+            <a href="checkout.html" class="btn btn-outline-primary w-50" type="submit">Checkout</a>
+          </div>
+        </div>
+      </div>
     </main>
+
 
     <!-- footer -->
     <section>
