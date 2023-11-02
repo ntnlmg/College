@@ -6,7 +6,7 @@
     <title>My Portofolio | ntnlmg</title>
     <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="main.css" />
   </head>
 
   <body>
@@ -14,46 +14,43 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm text-body-secondary">
       <div class="container">
         <!-- left nav start-->
-        <section>
-          <a class="navbar-brand" href="index.html">
-            <span class="navbar-brand mb-0 h1 active" aria-current="page" style="font-size: 38px; letter-spacing: 0.184211em">NTNLMG</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </section>
+        <a class="navbar-brand" href="index.html">
+          <span class="navbar-brand mb-0 h1" style="font-size: 38px; letter-spacing: 0.184211em">NTNLMG</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <!-- left nav end-->
+        <!-- right nav start-->
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
             <li>
-              <div class="dropdown" style="text-decoration: none">
-                <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-disabled="true">Projects</a>
+              <div class="dropdown">
+                <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown">Projects</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Link 1</a></li>
-                  <!-- <li><a class="dropdown-item" href="#">Link 2</a></li>
-                  <li><a class="dropdown-item" href="#">Link 3</a></li> -->
+                  <li><a class="dropdown-item" href="#">Link 2</a></li>
+                  <li><a class="dropdown-item" href="#">Link 3</a></li>
                 </ul>
               </div>
             </li>
             <li>
-              <a class="nav-link active" aria-current="page" href="about.html">Abouts</a>
+              <a class="nav-link active" aria-current="page" href="#">About</a>
             </li>
             <li>
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
-          <!-- right nav start-->
           <ul class="navbar-nav" style="list-style: none">
             <div class="row">
-              <li class="col-2 ms-2">
+              <li class="col-2 ms-3">
                 <a class="text-body-secondary" href="https://twitter.com/ntnlmg" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                    <path
-                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
                   </svg>
                 </a>
               </li>
-              <li class="col-2 ms-2">
+              <li class="col-2 ms-3">
                 <a class="text-body-secondary" href="https://instagram.com/ntnlmg" target="_blank">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
                     <path
@@ -61,7 +58,7 @@
                   </svg>
                 </a>
               </li>
-              <li class="col-2 ms-2">
+              <li class="col-2 ms-3">
                 <a class="text-body-secondary" href="https://linkedin.com/ntnlmg" target="_blank">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
                     <path
@@ -86,8 +83,8 @@
         </div>
         <div class="col-lg-6">
           <p>Hi, I'm Natan.</p>
-          <p>I'm a informatics engineering student living in Malang, East Java, Indonesia. Currently, I’m in my 5th semester in Universitas Ma Chung, Malang.</p>
-          <p>I'm passionate about probably too many things, but make my living from photography and video work.</p>
+          <p>I'm a Informatics Engineering student living in Malang, East Java, Indonesia. Currently, I’m in my 5th semester in Universitas Ma Chung, Malang.</p>
+          <!-- <p>I'm passionate about probably too many things, but make my living from photography and video work.</p> -->
           <p>I’m storing most of my work on github as a repository. I’ll try to keep it updated the best I can.</p>
           <h3>Toss me a line</h3>
           <p><em>natanael.gloryant2020@gmail.com</em></p>
@@ -95,7 +92,7 @@
       </div>
     </section>
     <!-- jumbotraon/heroes end -->
-    <script src="js/about.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/about.js"></script>
   </body>
 </html>

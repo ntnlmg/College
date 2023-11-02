@@ -1,0 +1,82 @@
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  /* text-decoration: none; */
+  color: inherit;
+  /* cursor: text; */
+}
+
+.nav-link {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: aqua;
+  text-decoration: underline; /* If you want to add an underline */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.dropdown-item:hover {
+  font-weight: bolder;
+}
+
+.dropdown-item:focus {
+  font-style: oblique;
+}
+
+.bi:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("img/coming_soon.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.fade {
+  animation: fade 0.5s both;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.accordion-item {
+  border: 0;
+}
