@@ -1,0 +1,76 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  font-weight: 500;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+  color: #ffc107 !important;
+  text-shadow: 0.5px 0.5px rgba(167, 167, 167, 0.5);
+}
+
+.btn {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+/* 
+.btn-pills-primary {
+  color: #fff;
+  background-color: #0d6efd;
+}
+
+.btn-pills-primary:hover {
+  color: #fff;
+  background-color: #0d6dfd8e;
+  border-color: #0d6efd;
+} */
+
+.card:hover {
+  box-shadow: 12px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0dcaf0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+
+.back-to-top svg {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: 0.2s ease-out;
+}
+
+.back-to-top:hover {
+  background-color: #0dcaf0;
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-5px);
+}
+
+.icon {
+  margin-right: 1em;
+  font-size: 1.4em; /* Adjust the size as needed */
+}
